@@ -77,9 +77,11 @@ Players.PlayerRemoving:Connect(function(plr)
 	local userId = plr.UserId
 	local leaveTime = os.time()
 	local playerJoinData
+	local index
 	for i,joinData in pairs(data) do
 		if(joinData.playerId == userId) then
 			playerJoinData = joinData
+			index = i
 		end
 	end
 	if(playerJoinData == nil) then return end
@@ -89,4 +91,5 @@ Players.PlayerRemoving:Connect(function(plr)
 	local leaveString = os.date("%I:%M:%S %p on %A, %B %d, %Y", leaveTime)
 	local timeString = convertSeconds(timeInGame)
 	logData(playerName, joinString, leaveString, timeString)
+	table.remove(data, index)
 end)
