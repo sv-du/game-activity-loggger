@@ -11,9 +11,6 @@ local HttpService = game:GetService("HttpService")
 local SECONDS_PER_HOUR = 3600
 local SECONDS_PER_MINUTE = 60
 
-webhookUrl = webhookUrl:gsub("https://discord.com", "https://hooks.hyra.io")
-webhookUrl = webhookUrl:gsub("https://discordapp.com", "https://hooks.hyra.io")
-
 function convertSeconds(seconds)
 	local hours = 0
 	local minutes = 0
@@ -51,7 +48,7 @@ function logData(playerName, joinTime, leaveTime, timeSpent)
 							}
 						},
 						footer = {
-							text = "System created by zachariapopcorn#8105 - https://discord.gg/XGGpf3q"
+							text = "System created by sv_du - https://discord.gg/XGGpf3q"
 						}
 					}
 				}
